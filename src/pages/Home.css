@@ -1,0 +1,25 @@
+.load-btn {
+  background-color: orange;
+  border: none;
+}
+.load-btn:hover {
+  background-color: rgb(200, 130, 0);
+}
+.recomendation {
+  padding-top: 20px;
+  padding-left: 27px;
+}
+
+.card-home {
+  width: 100%;
+  height: auto;
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-gap: 3rem;
+  margin-top: 45px;
+}
+.heading {
+  margin: 50px 0 0 80px;
+}

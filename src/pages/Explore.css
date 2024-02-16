@@ -1,0 +1,136 @@
+.recipes-Explore {
+  width: 1000px;
+}
+.main-explore {
+  margin-bottom: 3rem;
+}
+.main-explore-1 {
+  width: 76vw;
+  margin-left: 4rem;
+}
+
+.card-Explore {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-gap: 3rem;
+}
+
+.container-explore {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter {
+  width: 16vw;
+  margin-left: 3rem;
+}
+.glass {
+  max-width: fit-content;
+  max-height: 528px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: transform 0.3s ease-in-out;
+}
+.glass:hover {
+  transform: translateX(-3px);
+}
+
+.sidebar-text {
+  font-size: larger;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+hr {
+  margin: 5px;
+  margin-left: 0;
+  padding: 0;
+  color: #fcb036;
+  background-color: #9c7d01;
+  height: 2px;
+}
+
+.label-text {
+  padding-left: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+/* For Checkbox */
+.checker1:hover {
+  outline: solid #fcb036;
+  cursor: pointer;
+  background: transparent;
+  color: #fcb036;
+  background-color: rgb(249, 247, 244);
+}
+
+.checker1:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #ffcf81;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(249, 210, 151);
+}
+
+.checker1:checked {
+  color: #ffa600;
+  background-color: #f8b54b;
+  border-color: #d68c02;
+  transition: 0.5s;
+}
+
+.checker1:checked + .label-text {
+  font-weight: bold;
+  color: #ffa600;
+  transition: 0.5s;
+  font-size: 14px;
+}
+
+/* For radio button */
+.checker2:hover {
+  outline: solid #fcb036;
+  cursor: pointer;
+  background: transparent;
+
+  color: #fcb036;
+  background-color: rgb(249, 247, 244);
+}
+
+.checker2:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #ffcf81;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(249, 210, 151);
+}
+
+.checker2:checked {
+  color: #ffa600;
+  background-color: #f8b54b;
+  border-color: #d68c02;
+  transition: 0.5s;
+}
+
+.checker2:checked + .label-text {
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffa600;
+  transition: 0.5s;
+}

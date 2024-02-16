@@ -1,0 +1,104 @@
+.footer {
+  height: 100%;
+  padding-top: 30px;
+}
+
+.footer-container {
+  width: 100%;
+  height: 260px;
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  column-gap: 3rem;
+}
+
+.img-logo link {
+  padding-top: 10px;
+}
+
+.img-logo {
+  width: 3.5rem;
+  margin-top: -20px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  padding: 0%;
+}
+
+.footer-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #212529;
+  margin-left: -20px;
+}
+
+.footer-col {
+  margin-left: 10px;
+}
+
+.footer-col p {
+  width: 326px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  padding-top: 10px;
+}
+
+li a {
+  color: #333;
+}
+
+.footer-col p {
+  width: 326px;
+  margin-top: 20px;
+  text-align: justify;
+}
+
+.footer-col h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #000000;
+  height: 100px;
+}
+
+.footer-bottom p {
+  margin-bottom: 10px;
+}
+
+.footer-bottom a {
+  color: #333;
+  margin-right: 10px;
+}
+
+.subscribe form {
+  display: flex;
+  align-items: center;
+}
+
+.subscribe input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.subscribe button {
+  background-color: orange; /* Theme color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

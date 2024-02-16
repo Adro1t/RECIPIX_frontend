@@ -1,0 +1,47 @@
+import { API } from "../config";
+
+//to fetch recipe by arrival date
+export const getRecipe = async (sortBy) => {
+  try {
+    const res = await fetch(
+      `${API}/recipe/list?sortBy=${sortBy}&order=desc&limit=10`,
+      {
+        method: "GET",
+      }
+    );
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    return console.log(err);
+  }
+};
+
+//to get all categories
+export const getCategories = async () => {
+  try {
+    const res = await fetch(`${API}/category/list`, {
+      method: "GET",
+    });
+    return await res.json();
+  } catch (err) {
+    return console.log(err);
+  }
+};
+
+//to filter recipe by category and time
+export const getFilteredRecipes = async (skip, limit, filters = {}) => {
+  let data = { limit, skip, filters };
+  try {
+    const res = await fetch(`${API}/recipe/list/search`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    return await res.json();
+  } catch (err) {
+    return console.log(err);
+  }
+};

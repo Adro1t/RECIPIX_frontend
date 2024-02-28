@@ -45,3 +45,27 @@ export const getFilteredRecipes = async (skip, limit, filters = {}) => {
     return console.log(err);
   }
 };
+
+//to fetch recipe details
+export const recipeDetails = async (recipeId) => {
+  try {
+    const res = await fetch(`${API}/recipe/detail/${recipeId}`, {
+      method: "GET",
+    });
+    return await res.json();
+  } catch (err) {
+    return console.log(err);
+  }
+};
+
+//related list
+export const relatedList = async (recipeId) => {
+  try {
+    const res = await fetch(`${API}/recipe/related/${recipeId}`, {
+      method: "GET",
+    });
+    return await res.json();
+  } catch (err) {
+    return console.log(err);
+  }
+};

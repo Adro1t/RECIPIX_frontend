@@ -58,48 +58,44 @@ const Nav = () => {
           )}
 
           {isAuthenticated() && (
-            <div className="d-flex">
-              <Link to={dashboardLink}>
+            <div className="dropdown d-flex">
+              <Link
+                to="#"
+                className="d-flex align-items-center text-decoration-none "
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 <img src={person} alt="login" />
               </Link>
-
-              <div className="dropdown d-flex">
-                <Link
-                  to="#"
-                  className="d-flex align-items-center text-decoration-none dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                ></Link>
-                <ul className="dropdown-menu text-small shadow box">
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      {user.email}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Settings
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Profile
-                    </Link>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <Link
-                      className="dropdown-item"
-                      to="/login"
-                      onClick={() => signout(() => navigate("/login"))}
-                    >
-                      Sign out
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              <ul className="dropdown-menu text-small shadow box">
+                <li>
+                  <Link className="dropdown-item" to="#">
+                    {user.email}
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="#">
+                    Settings
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to={dashboardLink}>
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <Link
+                    className="dropdown-item"
+                    to="/login"
+                    onClick={() => signout(() => navigate("/login"))}
+                  >
+                    Sign out
+                  </Link>
+                </li>
+              </ul>
             </div>
           )}
         </div>

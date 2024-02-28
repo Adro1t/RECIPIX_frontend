@@ -15,6 +15,7 @@ import ResetPassword from "./user/ResetPassword";
 import UserDashboard from "./user/UserDashboard";
 import Login from "./pages/Login";
 import Explore from "./pages/Explore";
+import AllUsers from "./admin/AllUsers";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="addcategory" element={<AddCategory />} />
             <Route path="addrecipe" element={<AddRecipe />} />
             <Route path="recipes" element={<AllRecipe />} />
+            <Route path="customers" element={<AllUsers />} />
           </Route>
 
           {/* private */}

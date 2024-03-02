@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import { recipeDetails, relatedList } from "../components/uiApi";
-import { Link, useParams } from "react-router-dom";
 import { API } from "../config";
+import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 
 const RecipeDetails = (props) => {
@@ -27,6 +27,7 @@ const RecipeDetails = (props) => {
         relatedList(data._id).then((related) => {
           if (related.error) {
             setError(related.error);
+            console.log(error);
           } else {
             setRelatedRecipes(related);
           }
@@ -36,7 +37,7 @@ const RecipeDetails = (props) => {
   };
   useEffect(() => {
     loadSingleRecipe(recipeId);
-  }, [props]);
+  }, [recipeId]);
   return (
     <>
       <Nav />

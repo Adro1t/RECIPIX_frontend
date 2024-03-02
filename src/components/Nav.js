@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import recipix from "../images/Recipix.png";
-import search from "../images/Search-icon.png";
 import person from "../images/user-icon.png";
 import { isAuthenticated, signout } from "../pages/auth";
 import "./Nav.css";
+import Search from "./Search";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -22,14 +22,7 @@ const Nav = () => {
             RecipiX
           </Link>
         </div>
-        <div className="search-bar">
-          <form className="example" action="action_page.php">
-            <input type="text" placeholder="Search.." name="search" />
-            <button type="submit">
-              <img className="Search-icon" src={search} alt=""></img>
-            </button>
-          </form>
-        </div>
+        <Search />
         <div className="nav-pages">
           <ul className="nav-links">
             <li className="links">

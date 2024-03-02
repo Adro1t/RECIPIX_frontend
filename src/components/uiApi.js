@@ -1,10 +1,10 @@
 import { API } from "../config";
 
 //to fetch recipe by arrival date
-export const getRecipe = async (sortBy) => {
+export const getRecipe = async (sortBy, order, limit) => {
   try {
     const res = await fetch(
-      `${API}/recipe/list?sortBy=${sortBy}&order=desc&limit=10`,
+      `${API}/recipe/list?sortBy=${sortBy}&order=${order}&limit=${limit}`,
       {
         method: "GET",
       }

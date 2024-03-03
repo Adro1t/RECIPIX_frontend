@@ -23,17 +23,17 @@ const Login = () => {
   };
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid bg_image">
         <div className="row">
-          <div className="col-md-4 p-5">
-            <Link to="/">
+          <div className="col-md-4 p-5 logins">
+            <Link to="/" className="d-flex justify-content-center logo-box">
               <img
                 src={logo}
                 alt="logo"
-                className="d-inline logo1"
+                className="logo1"
                 width={"100px"}
               />
-              <span className="d-inline title form-text">RECIPIX</span>
+              <span className="title form-text">RECIPIX</span>
             </Link>
             <p className=" text-center form-text">CREATE ACCOUNT</p>
             <div className="options-box">
@@ -60,7 +60,7 @@ const Login = () => {
               <Signup />
             </div>
           </div>
-          <div className="col-md-8">
+          <div className="col-md-8 background_image">
             <img src={khajaSet} alt="khaja" className="khajaset" />
             <img src={background} alt="..." className="khajabg" />
           </div>

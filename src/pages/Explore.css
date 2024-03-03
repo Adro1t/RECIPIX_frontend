@@ -24,7 +24,7 @@
   width: 16vw;
   margin-left: 3rem;
 }
-/* .glass {
+.glass {
   max-width: fit-content;
   max-height: 528px;
   margin-left: 50px;
@@ -38,9 +38,9 @@
   -webkit-backdrop-filter: blur(10px);
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  /* box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
   transition: transform 0.3s ease-in-out;
-} */
+}
 .glass:hover {
   transform: translateX(-3px);
 }

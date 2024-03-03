@@ -10,7 +10,7 @@ const Home = () => {
   const [recipeByArrival, setRecipeByArrival] = useState([]);
 
   const loadRecipeByArrival = () => {
-    getRecipe("createdAt")
+    getRecipe("createdAt", "desc", 10)
       .then((data) => {
         if (data.error) {
           console.log(data.error);

@@ -13,38 +13,40 @@ const Card = ({ props }) => {
   if (props !== undefined) {
     return (
       <>
-        <div className="card-container">
-          <div className="card">
-            <img
-              src={`${API}/${props.image}`}
-              alt={props.recipe_name}
-              className="card-img"
-            />
-            <div className="card-content">
-              <h4 className="category">
-                {capitalize(props.category.category_Name)}
-              </h4>
-              <div className="card-title">
-                <h3 className="Title">{props.recipe_name}</h3>
-                <div className="rating">
-                  <img src={rating} alt="" />
-                  <h3>{props.rating}</h3>
+        <Link to={`/recipedetail/${props._id}`}>
+          <div className="card-container">
+            <div className="card">
+              <img
+                src={`${API}/${props.image}`}
+                alt={props.recipe_name}
+                className="card-img"
+              />
+              <div className="card-content">
+                <h4 className="category">
+                  {capitalize(props.category.category_Name)}
+                </h4>
+                <div className="card-title">
+                  <h3 className="Title">{props.recipe_name}</h3>
+                  <div className="rating">
+                    <img src={rating} alt="" />
+                    <h3>{props.rating}</h3>
+                  </div>
                 </div>
-              </div>
-              <div className="time">
-                <h3 className="total-time">{props.total_time} min</h3>
-                <div className="card-icon">
-                  <Link>
-                    <img src={like} alt="" />
-                  </Link>
-                  <Link>
-                    <img src={comment} alt="" />
-                  </Link>
+                <div className="time">
+                  <h3 className="total-time">{props.total_time} min</h3>
+                  <div className="card-icon">
+                    <button className="border-0">
+                      <img src={like} alt="" />
+                    </button>
+                    <button className="border-0">
+                      <img src={comment} alt="" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       </>
     );
   }

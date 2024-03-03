@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import recipix from "../images/Recipix.png";
-import search from "../images/Search-icon.png";
 import person from "../images/user-icon.png";
 import hamberger from "../images/hamburger-menu.svg"
 import { isAuthenticated, signout } from "../pages/auth";
 import "./Nav.css";
+import Search from "./Search";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -23,14 +23,7 @@ const Nav = () => {
             RecipiX
           </Link>
         </div>
-        <div className="search-bar">
-          <form className="example" action="action_page.php">
-            <input type="text" placeholder="Search.." name="search" />
-            <button type="submit">
-              <img className="Search-icon" src={search} alt=""></img>
-            </button>
-          </form>
-        </div>
+        <Search />
         <div className="nav-pages">
           <ul className="nav-links">
             <li className="links">
@@ -59,48 +52,44 @@ const Nav = () => {
           )}
 
           {isAuthenticated() && (
-            <div className="d-flex">
-              <Link to={dashboardLink}>
+            <div className="dropdown d-flex">
+              <Link
+                to="#"
+                className="d-flex align-items-center text-decoration-none "
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 <img src={person} alt="login" />
               </Link>
-
-              <div className="dropdown d-flex">
-                <Link
-                  to="#"
-                  className="d-flex align-items-center text-decoration-none dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                ></Link>
-                <ul className="dropdown-menu text-small shadow box">
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      {user.email}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Settings
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Profile
-                    </Link>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <Link
-                      className="dropdown-item"
-                      to="/login"
-                      onClick={() => signout(() => navigate("/login"))}
-                    >
-                      Sign out
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              <ul className="dropdown-menu text-small shadow box">
+                <li>
+                  <Link className="dropdown-item" to="#">
+                    {user.email}
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="#">
+                    Settings
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to={dashboardLink}>
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <Link
+                    className="dropdown-item"
+                    to="/login"
+                    onClick={() => signout(() => navigate("/login"))}
+                  >
+                    Sign out
+                  </Link>
+                </li>
+              </ul>
             </div>
           )}
         </div>

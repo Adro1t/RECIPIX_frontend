@@ -1,10 +1,10 @@
 import { API } from "../config";
 
 //to fetch recipe by arrival date
-export const getRecipe = async (sortBy) => {
+export const getRecipe = async (sortBy, order, limit = undefined) => {
   try {
     const res = await fetch(
-      `${API}/recipe/list?sortBy=${sortBy}&order=desc&limit=10`,
+      `${API}/recipe/list?sortBy=${sortBy}&order=${order}&limit=${limit}`,
       {
         method: "GET",
       }
@@ -39,6 +39,30 @@ export const getFilteredRecipes = async (skip, limit, filters = {}) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
+    });
+    return await res.json();
+  } catch (err) {
+    return console.log(err);
+  }
+};
+
+//to fetch recipe details
+export const recipeDetails = async (recipeId) => {
+  try {
+    const res = await fetch(`${API}/recipe/detail/${recipeId}`, {
+      method: "GET",
+    });
+    return await res.json();
+  } catch (err) {
+    return console.log(err);
+  }
+};
+
+//related list
+export const relatedList = async (recipeId) => {
+  try {
+    const res = await fetch(`${API}/recipe/related/${recipeId}`, {
+      method: "GET",
     });
     return await res.json();
   } catch (err) {

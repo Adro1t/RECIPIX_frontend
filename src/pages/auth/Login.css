@@ -66,7 +66,7 @@
   outline-style: inset;
   box-shadow: 0 0 2px 4px #ff61241f;
   /* caret-color: #fcb036; */
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .input-field:focus {
@@ -93,7 +93,7 @@
   outline-style: outset;
   font-weight: bold;
   /* color: #fcb036; */
-  background-color: rgb(249, 247, 244);
+  /* background-color: rgb(249, 247, 244); */
 }
 
 .input-btn {

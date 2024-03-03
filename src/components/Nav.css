@@ -110,3 +110,36 @@ form.example::after {
   left: initial !important;
   right: 100%;
 }
+
+.hamberger{
+  display: none;
+}
+
+@media (max-width: 1024px)
+{
+  .search-bar {
+    width: 300px;
+  }
+
+}
+
+@media (max-width: 768px){
+  .search-bar {
+    width: 400px;
+  }
+  .nav-pages{
+    display: none;
+  }
+  .User{
+    display: none;
+  }
+
+  .hamberger{
+    display: block;
+    color: #000;
+    width: 35px;
+
+  }
+}
+  
+

@@ -13,6 +13,7 @@ const Carousel = () => {
         id="carouselExampleAutoplaying"
         className="carousel slide my-5"
         data-bs-ride="carousel"
+        style={{ zIndex: "1" }}
       >
         <div className="carousel-inner">
           <div className="carousel-item active">

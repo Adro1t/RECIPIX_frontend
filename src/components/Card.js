@@ -35,12 +35,12 @@ const Card = ({ props }) => {
                 <div className="time">
                   <h3 className="total-time">{props.total_time} min</h3>
                   <div className="card-icon">
-                    <Link>
+                    <button className="border-0">
                       <img src={like} alt="" />
-                    </Link>
-                    <Link>
+                    </button>
+                    <button className="border-0">
                       <img src={comment} alt="" />
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>

@@ -1,11 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import khajaSet from "../images/Khajaset.png";
 import logo from "../images/Recipix.png";
 import background from "../images/background.png";
 import "./auth/Login.css";
 import Signin from "./auth/Signin";
 import Signup from "./auth/Signup";
+import { isAuthenticated } from "./auth";
 
 const Login = () => {
   const toggleSignIN = () => {
@@ -21,6 +22,27 @@ const Login = () => {
     document.querySelector(".toggler").classList.remove("underline");
     document.getElementById("signup").classList.remove("d-none");
   };
+
+  const navigate = useNavigate();
+  const { user } = isAuthenticated();
+
+  //to redirect User
+  const redirectUser = () => {
+    if (user && user.role === 1) {
+      navigate("/admin/dashboard");
+    } else {
+      navigate("/user/dashboard");
+    }
+
+    if (!isAuthenticated()) {
+      navigate("/login");
+    }
+  };
+
+  useEffect(() => {
+    redirectUser();
+  }, [user]);
+
   return (
     <>
       <div className="container-fluid bg_image">

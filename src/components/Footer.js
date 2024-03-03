@@ -4,6 +4,7 @@ import recipix from "../images/Recipix.png";
 import "./Footer.css";
 
 const Footer = () => (
+  <>
   <footer className="footer">
     <div className="footer-container">
       <div className="footer-col">
@@ -80,17 +81,18 @@ const Footer = () => (
           Join now for delicious cooking tips and a flavor-packed experience!
         </p>
         <form>
-          <input type="email" placeholder="Your Email                     @" />
+          <input type="email" placeholder="Your Email   @" />
           <button type="submit">Subscribe</button>
         </form>
       </div>
     </div>
-    <div className="footer-bottom">
-      <p>&copy; 2024 RecipiX. All Rights Reserved.</p>
-      <Link to="/privacy-policy">Privacy Policy</Link>
-      <Link to="/terms">Terms</Link>
-    </div>
   </footer>
+  <div className="footer-last">
+  <p>&copy; 2024 RecipiX. All Rights Reserved.</p>
+  <Link to="/privacy-policy">Privacy Policy</Link>
+  <Link to="/terms">Terms</Link>
+</div>
+</>
 );
 
 export default Footer;

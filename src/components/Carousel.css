@@ -1,11 +1,11 @@
 .carousel {
   margin: auto;
-  width: 90%;
+  width: 90vw;
 }
 
 .carousel img {
-  border-radius: 30px;
-  height: 500px;
+  border-radius: 20px;
+  height: 32vw;
   max-width: 100%;
   object-fit: cover;
 }

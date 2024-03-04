@@ -20,18 +20,23 @@ header {
 
 .navbar {
   width: 100%;
-  height: 75px;
-  max-width: 94%;
+  height: auto;
+  max-width: 90%;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 27px;
+  align-items: center !important;
+}
+.nav-cont{
+  gap: 10vw;
 }
 
 .navbar .nav-logo a {
   font-size: 1.5rem;
   font-weight: bold;
+}
+.nav-pages{
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-pages .nav-links {
@@ -111,35 +116,43 @@ form.example::after {
   right: 100%;
 }
 
-.hamberger{
-  display: none;
-}
 
-@media (max-width: 1024px)
+@media (max-Width:989px)
 {
-  .search-bar {
-    width: 300px;
+  .nav-cont{
+    gap: 2rem;
   }
-
+}
+@media (max-Width: 408px)
+{
+  .nav-cont{
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-@media (max-width: 768px){
-  .search-bar {
-    width: 400px;
+
+@media (max-Width:789px)
+{
+
+  .search-bar{
+    width: 270px;
   }
+}
+
+@media (max-Width:533px)
+{
+.nav-cont:nth-child(1){
+  justify-content: center;
+}
+}
+
+@media (max-Width:986px)
+{
   .nav-pages{
-    display: none;
-  }
-  .User{
-    display: none;
-  }
-
-  .hamberger{
-    display: block;
-    color: #000;
-    width: 35px;
-
+    flex-direction: column-reverse;
+    gap:0;
   }
 }
-  
+
 

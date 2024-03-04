@@ -57,7 +57,7 @@ const Search = () => {
 
   return (
     <div className="search-bar" style={{ position: "relative" }}>
-      <form className="example" onSubmit={handleSearch}>
+      <form className="example d-flex" onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="Search.."

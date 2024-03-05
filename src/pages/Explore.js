@@ -104,7 +104,7 @@ const Explore = () => {
       <Nav />
       <div className="container-fluid mt-5">
         <div className="row main-explore">
-          <div className="col-md-2 filter glass">
+          <div className="col col-md-2 filter glass">
             <h1 className="sidebar-text">Categories</h1>
             <hr></hr>
             <Checkbox
@@ -120,7 +120,7 @@ const Explore = () => {
               handleFilters={(filters) => handleFilters(filters, "total_time")}
             />
           </div>
-          <div className="main-explore-1">
+          <div className="col main-explore-1">
             <div className="container-fluid">
               <div className="card-Explore">
                 {filteredRecipes.map((recipe, i) => (

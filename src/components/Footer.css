@@ -28,10 +28,6 @@
   margin-left: -20px;
 }
 
-.footer-col {
-  margin-left: 10px;
-}
-
 .footer-col p {
   width: 326px;
 }
@@ -65,7 +61,7 @@ li a {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 221px;
+  width: clamp(170px, 70%, 221px);
   height: 45px;
 }
 
@@ -77,7 +73,7 @@ li a {
   border-radius: 5px;
   cursor: pointer;
   height: 45px;
-  width: 221px;
+  width: clamp(150px, 50%, 200px);
 }
 
 ul li a{
@@ -107,5 +103,9 @@ ul li a{
   .small{
     align-items: center;
     justify-content: center;
+  }
+
+  .subscribe input{
+    width: 50vw;
   }
 }

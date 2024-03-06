@@ -1,4 +1,5 @@
 .carousel {
+  border-radius: 20px;
   margin: auto;
   width: 90vw;
 }
@@ -8,4 +9,14 @@
   height: 32vw;
   max-width: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 640px){
+  .carousel{
+    width: 100%;
+  }
+
+  .carousel img {
+    border-radius: 0px;
+  }
 }

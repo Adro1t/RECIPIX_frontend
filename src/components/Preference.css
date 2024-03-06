@@ -1,0 +1,26 @@
+.precard{
+    width: 200px;
+    text-align: center;
+    height: 45px;
+    color: #fff;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.precard:hover{
+    transform: translateY(-2px);
+}
+
+.precontainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.precard h3{
+    padding: 5px 10px;
+    font-size: bold;
+}

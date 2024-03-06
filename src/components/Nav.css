@@ -140,11 +140,12 @@ form.example::after {
   }
 }
 
-@media (max-Width:533px)
-{
-.nav-cont:nth-child(1){
-  justify-content: center;
-}
+
+@media (max-width: 640px){
+  .search-bar {
+    width: 100%;
+    order: 2;
+  }
 }
 
 @media (max-Width:986px)

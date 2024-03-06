@@ -83,7 +83,7 @@ const Footer = () => (
           <div className="d-flex flex-column justify-content-center small">
           <form className="mb-3">
             <div className="subscribe">
-            <input type="email" placeholder="Your Email                       @" />
+            <input type="email" placeholder="Your Email" />
             </div>
           </form>
             <button type="submit">Subscribe</button>

@@ -40,7 +40,7 @@ body {
 }
 
 .card-content h3 {
-  font-size:  1.125rem;
+  font-size: 1.125rem;
   max-height: 3em;
   margin-bottom: 8px;
   font-weight: bold;
@@ -49,11 +49,10 @@ body {
   white-space: nowrap;
 }
 .card-content h3:hover {
-    max-height: none; /* Display full content when hovered */
-    text-overflow: clip; /* Remove the ellipsis effect on hover */
-    white-space: normal; /* Allow the text to wrap on hover */
-  }
-
+  max-height: none; /* Display full content when hovered */
+  text-overflow: clip; /* Remove the ellipsis effect on hover */
+  white-space: normal; /* Allow the text to wrap on hover */
+}
 
 .time h3 {
   font-size: 18px;

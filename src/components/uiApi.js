@@ -69,3 +69,14 @@ export const relatedList = async (recipeId) => {
     return console.log(err);
   }
 };
+
+export const getIngredients = async () => {
+  try {
+    const res = await fetch(`${API}/ingredient/list`, {
+      method: "GET",
+    });
+    return await res.json();
+  } catch (err) {
+    return console.log(err);
+  }
+};

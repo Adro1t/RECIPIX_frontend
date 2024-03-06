@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 
 import { signup } from "./index";
@@ -69,6 +69,13 @@ const Signup = () => {
       New Account Created, verify your account before login
     </div>
   );
+
+  useEffect(() => {
+    if (success) {
+      // Trigger re-render to show success message
+      setValues({ ...values, success: true }); // Update state again to force re-render
+    }
+  }, [success]);
 
   return (
     <>

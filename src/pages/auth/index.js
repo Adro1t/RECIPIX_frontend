@@ -52,7 +52,9 @@ export const isAuthenticated = () => {
   if (typeof window === "undefined") {
     return false;
   }
-  return localStorage.getItem("jwt") ? JSON.parse(localStorage.getItem("jwt")) : false;
+  return localStorage.getItem("jwt")
+    ? JSON.parse(localStorage.getItem("jwt"))
+    : false;
 };
 
 //signout

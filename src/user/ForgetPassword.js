@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { forgetPassword } from "../pages/auth";
 
 const ForgetPassword = () => {
@@ -29,17 +29,30 @@ const ForgetPassword = () => {
 
   //to show error message
   const showError = () => (
-    <div className="alert alert-danger" style={{ display: error ? "" : "none" }}>
+    <div
+      className="alert alert-danger"
+      style={{ display: error ? "" : "none" }}
+    >
       {error}
     </div>
   );
 
   //to show success message
   const showSuccess = () => (
-    <div className="alert alert-info" style={{ display: success ? "" : "none" }}>
+    <div
+      className="alert alert-info"
+      style={{ display: success ? "" : "none" }}
+    >
       Reset Password Link has been sent to your email address
     </div>
   );
+
+  useEffect(() => {
+    if (success) {
+      // Trigger re-render to show success message
+      setValues({ ...values, success: true }); // Update state again to force re-render
+    }
+  }, [success]);
 
   return (
     <>

@@ -83,9 +83,11 @@ const RecipeDetails = (props) => {
       {relatedRecipes.length > 0 && (
         <div>
           <h1>YOU MAY ALSO LIKE</h1>
-          {relatedRecipes.map((recipe, i) => (
-            <Card key={i} props={recipe} />
-          ))}
+          <div className="d-flex gap-4">
+            {relatedRecipes.map((recipe, i) => (
+              <Card key={i} props={recipe} />
+            ))}
+          </div>
         </div>
       )}
 

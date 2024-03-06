@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import "./Login.css";
@@ -59,7 +59,11 @@ const Signin = () => {
       navigate("/");
     }
   };
-
+  useEffect(() => {
+    if (redirectToReferrer) {
+      redirectUser(); // Call the redirect function within useEffect
+    }
+  }, [redirectToReferrer]);
   return (
     <>
       <form className="input-grp">

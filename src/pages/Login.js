@@ -55,7 +55,7 @@ const Login = () => {
                 className="logo1"
                 width={"100px"}
               />
-              <span className="title form-text">RECIPIX</span>
+              <span className="title form-text">RecipiX</span>
             </Link>
             <p className=" text-center form-text">CREATE ACCOUNT</p>
             <div className="options-box">

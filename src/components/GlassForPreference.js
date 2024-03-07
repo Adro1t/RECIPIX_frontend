@@ -7,7 +7,7 @@ import Preference from "../components/Preference";
 const GlassForPreference = () => (
     <div className="cont">
         <div className="glasspref">
-            <div>
+            <div className="d-flex">
             <Preference />
             </div>
         </div>

@@ -70,9 +70,9 @@ export const relatedList = async (recipeId) => {
   }
 };
 
-export const getIngredients = async () => {
+export const getIngredients = async (limit) => {
   try {
-    const res = await fetch(`${API}/ingredient/list`, {
+    const res = await fetch(`${API}/ingredient/list?limit=${limit}`, {
       method: "GET",
     });
     return await res.json();

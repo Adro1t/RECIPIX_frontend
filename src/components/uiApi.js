@@ -70,13 +70,56 @@ export const relatedList = async (recipeId) => {
   }
 };
 
-export const getIngredients = async () => {
+export const getIngredients = async (limit) => {
   try {
-    const res = await fetch(`${API}/ingredient/list`, {
+    const res = await fetch(`${API}/ingredient/list?limit=${limit}`, {
       method: "GET",
     });
     return await res.json();
   } catch (err) {
     return console.log(err);
+  }
+};
+
+export const updatePreferences = async (email, preferences) => {
+  try {
+    const response = await fetch(`${API}/user/update/preferences`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        preferences: preferences,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error saving preferences: ${response.statusText}`);
+    }
+
+    await response.json();
+    console.log("Preferences saved successfully:"); // Log the response for debugging
+    // Handle successful response (e.g., display a success message)
+  } catch (err) {
+    console.error("Error saving preferences:", err); // Log the error for debugging
+    // Handle error (e.g., display an error message)
+  }
+};
+
+export const getUserDetails = async (token, id) => {
+  try {
+    const res = await fetch(`${API}/user/detail/${id}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await res.json();
+  } catch (err) {
+    console.log(err);
   }
 };

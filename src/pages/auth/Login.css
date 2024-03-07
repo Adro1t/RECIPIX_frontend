@@ -105,7 +105,8 @@
   background: linear-gradient(to right, #fcb036, #fcb036);
   border: 0;
   outline: none;
-  border-radius: 30px;
+  border-radius: 20px;
+  color: white;
 }
 
 .khajaset {
@@ -153,6 +154,7 @@
 .title {
   font-weight: bolder;
   font-size: 55px;
+  margin-top: 18px;
 }
 
 .logo1 {

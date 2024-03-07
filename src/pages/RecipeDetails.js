@@ -43,10 +43,10 @@ const RecipeDetails = (props) => {
   return (
     <>
       <Nav />
-      <h1>{recipe.recipe_name}</h1>
+      <h1 className="p-5">{recipe.recipe_name}</h1>
       <div className="Details-container">
-        <div className="row">
-          <div className="col-8">
+        <div className="row gap-3">
+          <div className="col-7">
             <div className="text-warning">
               <i className="bi bi-star-fill "></i>
               <i className="bi bi-star-fill"></i>

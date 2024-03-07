@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { forgetPassword } from "../pages/auth";
+import { Link } from "react-router-dom";
+import "./ForgetPassword.css"
 
 const ForgetPassword = () => {
   const [values, setValues] = useState({
@@ -55,32 +57,33 @@ const ForgetPassword = () => {
   }, [success]);
 
   return (
-    <>
-      <div className="p-5  w-50">
-        <h1>Forget Password</h1>
+  
+    <div className="Froget-Container d-flex justify-content-center w-100">
+      <div className="p-5">
+        <p className="h2">Reset your password</p>
+        <p>Enter your email and we'll send you link to reset your password.</p>
         <form>
           {showError()}
           {showSuccess()}
-
-          <label htmlFor="email">Email:</label>
-          <br />
           <input
-            className="form-control"
+            className="form-control "
             type="text"
             id="email"
             name="email"
             onChange={handleChange("email")}
             value={email}
+            placeholder="Email address"
           />
           <br />
-
-          <br />
-          <button className="btn btn-primary" onClick={clickSubmit}>
-            Send Password Reset Link
+          <button className="btn submit-btn" onClick={clickSubmit}>
+            Send link
           </button>
         </form>
+        <br />
+        <p>Go back to <Link className="text-decoration-underline" to="/login">Login page</Link></p>
       </div>
-    </>
+      </div>
+
   );
 };
 

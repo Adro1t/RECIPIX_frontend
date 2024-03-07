@@ -17,6 +17,8 @@ import Login from "./pages/Login";
 import Explore from "./pages/Explore";
 import AllUsers from "./admin/AllUsers";
 import GlassForPreference from "./components/GlassForPreference"; 
+import OwnerRecipe from "./components/OwnerRecipe";
+
 
 const App = () => {
   return (
@@ -29,6 +31,9 @@ const App = () => {
           <Route path="/explore" element={<Explore />} />
           <Route path="/login" element={<Login />} />
           <Route path="/GlassForPreference" element={<GlassForPreference />} />
+          <Route path="/OwnerRecipe" element={<OwnerRecipe />} />
+
+
         
 
           <Route path="/forgetpassword" element={<ForgetPassword />} />

@@ -98,7 +98,7 @@ const Signin = () => {
         />
         <br />
         <button
-          className="btn btn-primary input-btn form-text"
+          className="btn input-btn form-text"
           onClick={clickSubmit}
         >
           Login

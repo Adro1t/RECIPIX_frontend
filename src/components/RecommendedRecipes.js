@@ -72,7 +72,7 @@ const RecommendedRecipes = () => {
       const recipeVector = recipeTFIDFVectors[i];
       const similarity = cosineSimilarity(userVector, recipeVector);
       console.log(similarity);
-      if (similarity > 0.5) {
+      if (similarity > 0.2) {
         // Adjust threshold as needed
         recommendations.push(recipes[i]);
       }
@@ -98,7 +98,7 @@ const RecommendedRecipes = () => {
 
   useEffect(() => {
     init();
-  }, []);
+  }, [recommendations]);
 
   return (
     <>

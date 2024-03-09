@@ -37,13 +37,13 @@ const UserSidebar = () => {
             </Link>
           </li>
           <li>
-            <Link to="#" className="nav-link text-white">
+            <Link to="/user/myrecipes" className="nav-link text-white">
               My Recipes
             </Link>
           </li>
           <li>
-            <Link to="#" className="nav-link text-white">
-              Customers
+            <Link to="/Liked Recipes" className="nav-link text-white">
+              Liked Recipes
             </Link>
           </li>
         </ul>

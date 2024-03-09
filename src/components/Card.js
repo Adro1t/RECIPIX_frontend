@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./Card.css";
 import rating from "../images/rating.png";
 import like from "../images/like.png";
-import comment from "../images/comment.png";
 import { API } from "../config";
+import Like from "./Like";
 
 const Card = ({ props }) => {
   function capitalize(str) {
@@ -27,21 +27,14 @@ const Card = ({ props }) => {
                 </h4>
                 <div className="card-title">
                   <h3 className="Title">{props.recipe_name}</h3>
-                  <div className="rating">
+                  {/* <div className="rating">
                     <img src={rating} alt="" />
                     <h3>{props.rating}</h3>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="time">
                   <h3 className="total-time">{props.total_time} min</h3>
-                  <div className="card-icon">
-                    <button className="border-0">
-                      <img src={like} alt="" />
-                    </button>
-                    {/* <button>
-                      <img src={comment} alt="" />
-                    </button> */}
-                  </div>
+                  <Like />
                 </div>
               </div>
             </div>

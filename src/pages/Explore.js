@@ -105,7 +105,7 @@ const Explore = () => {
       <div className="container-fluid mt-5">
         <div className="row main-explore">
           <div className="col col-md-2 filter glass">
-            <h1 className="sidebar-text">Categories</h1>
+            <h1 className="sidebar-text">Cuisine</h1>
             <hr></hr>
             <Checkbox
               categories={categories}

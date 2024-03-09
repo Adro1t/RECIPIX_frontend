@@ -67,27 +67,24 @@ const RecipeDetails = (props) => {
   return (
     <>
       <Nav />
-      <h1 className="p-5">{recipe.recipe_name}</h1>
+      <h2 className="details-title">{recipe.recipe_name}</h2>
       <div className="Details-container">
-        <div className="row gap-3">
-          <div className="col-7">
-            <div className="text-warning">
-              <i className="bi bi-star-fill "></i>
-              <i className="bi bi-star-fill"></i>
-              <i className="bi bi-star-fill"></i>
-              <i className="bi bi-star-fill"></i>
-              <i className="bi bi-star-half"></i>
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-              <span className="text-black">{recipe.rating}</span>
-            </div>
+        <div className="row">
+          <div className="col-8 details-info">
             <div>
-              <p>{category}</p>
-              <p>By {owner}</p>
+              <p className="text-decoration-underline pb-1">by {owner}</p>
+              <p className="details-category">{category}</p>
+              <br />
+              <div className="d-flex gap-4 ">
+              <p>PrepTime :  {recipe.prep_time} min</p>
+              <p>|</p>
+              <p>Cooktime :  {recipe.cook_time} min</p>
+              <p>|</p>
+              <p>Total time : {recipe.total_time} min</p>
+              </div>
+              <br />
               <h3>Description</h3>
               <p>{recipe.description}</p>
-              <p>PrepTime {recipe.prep_time}</p>
-              <p>Cooktime {recipe.cook_time}</p>
-              <p>Total time {recipe.total_time}</p>
               <h3>Ingredients</h3>
               <p>
                 {recipe.ingredients &&
@@ -104,11 +101,12 @@ const RecipeDetails = (props) => {
                 ))}{" "}
             </div>
           </div>
-          <div className="col-4 d-flex justify-content-center">
+          <div className="col-4">
             <img
+            className="rounded"
               src={`${API}/${recipe.image}`}
               alt={"..." + recipe.recipe_name + "..."}
-              style={{ width: "70vw", height: "70vh", objectFit: "fill" }}
+              style={{ width: "20vw", height: "20vw", objectFit: "cover" }}
             />
           </div>
         </div>
@@ -116,8 +114,8 @@ const RecipeDetails = (props) => {
 
       {relatedRecipes.length > 0 && (
         <div>
-          <h1>YOU MAY ALSO LIKE</h1>
-          <div className="d-flex gap-4">
+          <h1 className="youmaylike">YOU MAY ALSO LIKE</h1>
+          <div className="card-home">
             {relatedRecipes.map((recipe, i) => (
               <Card key={i} props={recipe} />
             ))}

@@ -1,6 +1,11 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, signout } from "../pages/auth";
+import "./user.css"
+import home from "../images/house-solid.svg";
+import like from "../images/heart-solid.svg";
+import user from "../images/user-solid.svg";
+import add from "../images/plus-solid.svg";
 
 const UserSidebar = () => {
   const navigate = useNavigate();
@@ -10,45 +15,48 @@ const UserSidebar = () => {
   return (
     <div className="container-fluid">
       <div
-        className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
+        className="d-flex flex-column flex-shrink-0 p-3 text-bg-light rounded-3"
         style={{ width: "280px" }}
       >
-        <Link
+        {/* <Link
           to="/user/dashboard"
           className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
         >
           <span className="fs-4">Dashboard</span>
-        </Link>
-        <hr />
-        <ul className="nav nav-pills flex-column mb-auto">
-          <li className="nav-item">
+        </Link> */}
+        <ul className="nav nav-link flex-column dashboard">
+          <li className="nav-item d-flex align-item-center justify-content-start gap-2">
+            <img src={home} alt="" className="icon"/>
             <Link
               to="/user/dashboard"
-              className="nav-link active"
+              className="nav-link active text-dark"
               aria-current="page"
             >
               Home
             </Link>
           </li>
 
-          <li>
+          <li className="d-flex align-item-center justify-content-start gap-2">
+            <img src={add} alt="" className="icon"/>
             <Link to="/user/addrecipe" className="nav-link text-white">
-              Add Recipe
+                Add Recipe
             </Link>
           </li>
-          <li>
+          <li className="d-flex align-item-center justify-content-start gap-2">
+            <img src={user} alt="" className="icon"/>
             <Link to="/user/myrecipes" className="nav-link text-white">
               My Recipes
             </Link>
           </li>
-          <li>
+          <li className="d-flex align-item-center justify-content-start gap-2">
+            <img src={like} alt="" className="icon"/>
             <Link to="/Liked Recipes" className="nav-link text-white">
               Liked Recipes
             </Link>
           </li>
         </ul>
         <hr />
-        <div className="dropdown">
+        <div className="dropdown text-dark">
           <Link
             to="#"
             className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
@@ -62,9 +70,9 @@ const UserSidebar = () => {
               height="32"
               className="rounded-circle me-2"
             />
-            <strong>{name}</strong>
+            <strong className="text-dark">{name}</strong>
           </Link>
-          <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
+          <ul className="dropdown-menu dropdown-menu-dark text-small shadow text-dark">
             <li>
               <Link className="dropdown-item" to="#">
                 {email}

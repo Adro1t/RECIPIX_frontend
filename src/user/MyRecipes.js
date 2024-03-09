@@ -33,7 +33,7 @@ const MyRecipes = () => {
         <div className="col-md-3">
           <UserSidebar />
         </div>
-        <div className="col-md-9">
+        <div className="col-md-9 mt-4">
           <h1>My Recipes</h1>
           {recipes.map((recipe) => (
             <OwnerRecipe props={recipe} />

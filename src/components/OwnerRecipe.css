@@ -1,26 +1,27 @@
 .card-container {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* height: 100vh; */
-  background-color: #f0f0f0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      margin-top: 20px;
 }
 
 .card-background {
-  width: 60vw;
-  height: 220px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-right: 2px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: flex-start;
-  padding: 10px;
+    width: 60vw;
+    height: auto;
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-right: 2px solid rgba(255, 255, 255, .2);
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
 }
 
 .recipe-image {
@@ -29,24 +30,69 @@
   border-radius: 20px;
 }
 
-.details {
-  height: 100%;
-  max-height: 120px;
-  border: 1px solid black;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: small;
-  text-align: justify;
+.OwnerRecipe-heading{
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.description {
-  border: 1px solid black;
-  width: 107px;
-  border-radius: 20px;
-  padding: 7px;
-  /* margin-top: -6px; */
-  position: absolute;
-  top: 72px;
-  left: 249px;
-  background: rgb(239, 237, 237);
+.details{
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: small;
+    text-align: justify;
+    font-size: minmax(0.5rem,1rem);
+}
+
+.description{
+    border: 1px solid black;
+    width: 107px;
+    border-radius: 20px;
+    padding: 7px;
+    /* margin-top: -2px; */
+    position: absolute;
+    top: 72px;
+    left: 235px;
+    background: rgb(239, 237, 237);
+}
+
+#delete{
+    width: 2rem;
+}
+
+#edit{
+    width: 1.5rem;
+}
+
+.update{
+    width: 4rem;
+    align-items: center;
+}
+
+
+
+@media (max-width: 800px){
+    .card-background {
+        flex-direction: column;
+    }
+
+    .description{
+        position: absolute;
+        top: 275px;
+        left: 40px;
+        background: rgb(239, 237, 237);
+    }
+
+    .recipe-image{
+        width: auto;
+        margin: 0 auto;
+        object-fit: cover;
+        
+    }
+
+
 }

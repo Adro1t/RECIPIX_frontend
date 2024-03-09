@@ -35,13 +35,14 @@ const Search = () => {
           }
         }
 
-        if (matchCount >= queryLower.length) {
+        if (matchCount >= queryLower.length*0.8) {
           filteredResults.push(recipe);
         }
       }
     }
 
     setSearchResults(filteredResults);
+    console.log(filteredResults);
   };
 
   const handleChange = (e) => {

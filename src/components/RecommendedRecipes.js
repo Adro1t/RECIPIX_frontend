@@ -36,6 +36,7 @@ const RecommendedRecipes = () => {
         }
       });
     });
+    console.log(ingredientCounts)
 
     // Calculate TF-IDF for each ingredient in the current recipe
     const tfidfVector = allIngredients.map((ingredient, index) => {
@@ -60,27 +61,39 @@ const RecommendedRecipes = () => {
     const recipeTFIDFVectors = recipes.map((recipe) =>
       ingredientsToTFIDFVector(recipe.ingredientArray, allIngredientNames)
     );
+    
+    console.log("New start");
+    console.log(" User Preference: ");
+    console.log(userPreferences);
+    console.log("recipeTFIDFVectors");
     console.log(recipeTFIDFVectors);
     // Convert user preferences to TF-IDF vector
     const userVector = ingredientsToTFIDFVector(
       userPreferences,
       allIngredientNames
     );
+    
+    console.log("User Vector");
     console.log(userVector);
 
     const recommendations = [];
+    console.log("similarity between user preference and recipes")
     for (let i = 0; i < recipes.length; i++) {
       const recipeVector = recipeTFIDFVectors[i];
       const similarity = cosineSimilarity(userVector, recipeVector);
-      console.log(similarity);
       if (similarity > 0.2) {
         if (recommendations.length === 10) {
           break; // Stop iterating once 10 recommendations are found
         }
         // Adjust threshold as needed
         recommendations.push(recipes[i]);
+        console.log(similarity,recipes[i]);
       }
+      // to display all recipe similarity in console
+      // console.log(similarity,recipes[i]);
+      
     }
+    console.log("recommended recipe")
     console.log(recommendations);
 
     setFetchingData(false);

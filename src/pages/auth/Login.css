@@ -92,7 +92,7 @@
   background: transparent;
   outline-style: outset;
   font-weight: bold;
-  /* color: #fcb036; */
+  color: #fcb036;
   /* background-color: rgb(249, 247, 244); */
 }
 
@@ -163,9 +163,6 @@
 }
 
 @media (width>300px) and (width<431px) {
-  a:hover {
-    color: #6f4f03;
-  }
   .logo1 {
     padding-bottom: 50px;
     margin: auto;
@@ -173,15 +170,6 @@
   .logo-box{
     display: block;
   }
-  /* .bg_image {
-    background-image: url('../../images/background.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-  } */
   .form-text {
     font-family: "Poppins", sans-serif;
     font-weight: bolder;
@@ -213,18 +201,6 @@
   }
 }
 @media (width>432px) and (width<769px) {
-  a:hover {
-    color: #6f4f03;
-  }
-  /* .bg_image {
-    background-image: url('../../images/background.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height: 100vh;
-    width: 100vh;
-  } */
   .form-text {
     font-family: "Poppins", sans-serif;
     font-weight: bolder;

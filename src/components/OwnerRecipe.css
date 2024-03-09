@@ -4,6 +4,7 @@
       align-items: center;
       justify-content: center;
       background-color: #f0f0f0;
+      margin-top: 20px;
 }
 
 .card-background {
@@ -23,14 +24,21 @@
     padding: 10px;
 }
 
+.recipe-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
 
-.recipe-image{
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
+.OwnerRecipe-heading{
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .details{
+    width: 100%;
     height: auto;
     border: 1px solid black;
     padding: 20px;

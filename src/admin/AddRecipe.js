@@ -68,7 +68,18 @@ const AddRecipe = () => {
     setValues({ ...values, error: "" });
     createRecipe(token, formData).then((data) => {
       if (data.error) {
-        setValues({ ...values, error: data.error });
+        setValues({
+          ...values,
+          recipe_name: "",
+          description: "",
+          ingredients: "",
+          prep_time: "",
+          cook_time: "",
+          instructions: "",
+          image: "",
+          category: "",
+          error: data.error,
+        });
       } else {
         setValues({
           ...values,
@@ -195,6 +206,7 @@ const AddRecipe = () => {
                   onChange={handleChange("category")}
                   value={category}
                 >
+                  <option value="">Choose a category...</option>
                   {categories &&
                     categories.map((c, i) => (
                       <option key={i} value={c._id}>

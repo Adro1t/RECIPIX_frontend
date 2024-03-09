@@ -6,7 +6,7 @@ import AdminDashboard from "./admin/AdminDashboard";
 import AllRecipe from "./admin/AllRecipe";
 import Home from "./pages/Home";
 import RecipeDetails from "./pages/RecipeDetails";
-import Recipes from "./pages/Recipes";
+import Recipes from "./user/MyRecipes";
 import AdminRoute from "./pages/auth/AdminRoute";
 import Confirm from "./pages/auth/Confirm";
 import PrivateRoute from "./pages/auth/PrivateRoute";
@@ -16,9 +16,9 @@ import UserDashboard from "./user/UserDashboard";
 import Login from "./pages/Login";
 import Explore from "./pages/Explore";
 import AllUsers from "./admin/AllUsers";
-import GlassForPreference from "./components/GlassForPreference"; 
+import GlassForPreference from "./components/GlassForPreference";
 import OwnerRecipe from "./components/OwnerRecipe";
-
+import MyRecipes from "./user/MyRecipes";
 
 const App = () => {
   return (
@@ -30,11 +30,7 @@ const App = () => {
           <Route path="/details" element={<RecipeDetails />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/GlassForPreference" element={<GlassForPreference />} />
           <Route path="/OwnerRecipe" element={<OwnerRecipe />} />
-
-
-        
 
           <Route path="/forgetpassword" element={<ForgetPassword />} />
           <Route path="/reset/password/:token" element={<ResetPassword />} />
@@ -54,6 +50,7 @@ const App = () => {
           <Route path="/user/" element={<PrivateRoute />}>
             <Route path="dashboard" element={<UserDashboard />} />
             <Route path="addrecipe" element={<AddRecipe />} />
+            <Route path="myrecipes" element={<MyRecipes />} />
           </Route>
         </Routes>
       </Router>

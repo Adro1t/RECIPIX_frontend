@@ -9,7 +9,7 @@ body {
 }
 .card {
   width: 245px;
-  height: 350px;
+  height: auto;
   background-color: #f0f0f0;
   border-radius: 10px;
   overflow: hidden;

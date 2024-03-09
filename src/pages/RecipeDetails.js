@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 import "./RecipeDetails.css";
 
-
 const RecipeDetails = (props) => {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState({});
@@ -15,6 +14,7 @@ const RecipeDetails = (props) => {
   const [owner, setOwner] = useState("");
   const [relatedRecipes, setRelatedRecipes] = useState([]);
   const [error, setError] = useState(false);
+  const [instructions, setInstructions] = useState([]);
 
   const loadSingleRecipe = (recipeId) => {
     recipeDetails(recipeId).then((data) => {
@@ -37,6 +37,30 @@ const RecipeDetails = (props) => {
       }
     });
   };
+
+  function splitInstructions(instructions) {
+    // Check if the input string contains numbers
+    const containsNumbers = /\d/.test(instructions);
+
+    let stepsArray;
+
+    // Use different splitting approach based on whether numbers are present
+    if (containsNumbers) {
+      stepsArray = instructions
+        .split(/\d+\./)
+        .filter((item) => item.trim() !== "");
+    } else {
+      stepsArray = instructions.split(".").filter((item) => item.trim() !== "");
+    }
+
+    // Format the steps with numbers
+    const desiredOutput = stepsArray.map(
+      (item, index) => `${index + 1}.${item.trim()}`
+    );
+
+    return desiredOutput;
+  }
+
   useEffect(() => {
     loadSingleRecipe(recipeId);
   }, [recipeId]);
@@ -62,9 +86,19 @@ const RecipeDetails = (props) => {
               <h3>Description</h3>
               <p>{recipe.description}</p>
               <h3>Ingredients</h3>
-              <p>{recipe.ingredients}</p>
+              <p>
+                {recipe.ingredients &&
+                  recipe.ingredients
+                    .split(",")
+                    .map((ingredient) => (
+                      <p>{ingredient !== "" ? `${ingredient},` : ""}</p>
+                    ))}
+              </p>
               <h3>Instruction</h3>
-              <p>{recipe.instructions}</p>
+              {recipe.instructions &&
+                splitInstructions(recipe.instructions).map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}{" "}
             </div>
           </div>
           <div className="col-4">

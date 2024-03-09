@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getIngredients, getRecipe } from "./uiApi";
+import { getIngredients, getRecipe, getUserDetails } from "./uiApi";
 import Card from "./Card";
 import { isAuthenticated } from "../pages/auth";
 
@@ -7,17 +7,17 @@ const RecommendedRecipes = () => {
   const [allIngredients, setAllIngredients] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
-  const { user } = isAuthenticated();
-  const preferences = user.preferences;
+  const { token, user } = isAuthenticated();
+  const [preferences, setPreferences] = useState([]);
 
-  const fetchData = async () => {
+  const init = async () => {
     try {
       const ingredientsResponse = await getIngredients();
       const recipesResponse = await getRecipe("recipe_name", "asc");
-
-      setRecipes(recipesResponse);
+      const preferencesResponse = await getUserDetails(token, user._id);
       setAllIngredients(ingredientsResponse);
-
+      setRecipes(recipesResponse);
+      setPreferences(preferencesResponse.preferences);
       setRecommendations(recommendRecipes(preferences));
     } catch (err) {
       console.log(err);
@@ -59,21 +59,25 @@ const RecommendedRecipes = () => {
     const recipeTFIDFVectors = recipes.map((recipe) =>
       ingredientsToTFIDFVector(recipe.ingredientArray, allIngredientNames)
     );
+    console.log(recipeTFIDFVectors);
     // Convert user preferences to TF-IDF vector
     const userVector = ingredientsToTFIDFVector(
       userPreferences,
       allIngredientNames
     );
+    console.log(userVector);
 
     const recommendations = [];
     for (let i = 0; i < recipes.length; i++) {
       const recipeVector = recipeTFIDFVectors[i];
       const similarity = cosineSimilarity(userVector, recipeVector);
-      if (similarity > 0.5) {
+      console.log(similarity);
+      if (similarity > 0.2) {
         // Adjust threshold as needed
         recommendations.push(recipes[i]);
       }
     }
+    console.log(recommendations);
     return recommendations;
   }
 
@@ -93,9 +97,8 @@ const RecommendedRecipes = () => {
   }
 
   useEffect(() => {
-    fetchData();
-    // console.log(preferences);
-  });
+    init();
+  }, [recommendations]);
 
   return (
     <>

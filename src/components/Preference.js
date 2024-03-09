@@ -1,20 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { API } from "../config";
 import "./Preference.css";
 
-const Preference = ({ props }) => {
-  // State to store the current color
+const Preference = ({ ingredient, isSelected, onSelectionChange }) => {
+  // Use one state variable for color
   const [color, setColor] = useState("#ffb700");
-  const [color1, setColor1] = useState("#ffffff");
+  const [textColor, setTextColor] = useState("white");
 
-  // Function to handle click event and change color
   const handleClick = () => {
-    // Toggle between red and blue colors
     const newColor = color === "#ffb700" ? "#fff" : "#ffb700";
-    const newColor1 = color1 === "#ffffff" ? "#000000" : "#ffffff";
+    const newTextColor = textColor === "white" ? "black" : "white";
     setColor(newColor);
-    setColor1(newColor1);
+    setTextColor(newTextColor);
+    onSelectionChange(ingredient); // Pass the ingredient to the parent component
   };
 
   return (
@@ -22,13 +19,10 @@ const Preference = ({ props }) => {
       <div className="precontainer">
         <div
           className="precard"
-          style={{
-            backgroundColor: color,
-            color: color1,
-          }}
+          style={{ backgroundColor: color, color: textColor }}
           onClick={handleClick}
         >
-          <h3>{props}</h3>
+          <h3>{ingredient}</h3>
         </div>
       </div>
     </>

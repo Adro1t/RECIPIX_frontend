@@ -61,7 +61,7 @@
 }
 
 #delete{
-    width: 2rem;
+    width: 1.5rem;
 }
 
 #edit{
@@ -71,6 +71,9 @@
 .update{
     width: 4rem;
     align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
 }
 
 

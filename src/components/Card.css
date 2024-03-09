@@ -64,7 +64,7 @@ body {
   display: flex;
   align-items: center;
 }
-.card-icon img {
+.card-icon svg {
   width: 1.5rem;
   margin-left: 10px;
 }

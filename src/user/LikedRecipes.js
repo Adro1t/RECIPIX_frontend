@@ -22,13 +22,13 @@ const LikedRecipes = () => {
 
   return (
     <>
-      <div className="row">
+      <div className="container-fluid  row">
         <div className="col-md-3">
           <UserSidebar />
         </div>
-        <div className="col-md-9 mt-4">
+        <div className="col-md-8 mt-4">
           <h1>Liked Recipes</h1>
-          <div className="d-flex flex-wrap">
+          <div className="d-flex flex-wrap gap-2">
             {recipes.map((recipe) => (
               <Card props={recipe} key={recipe._id} />
             ))}

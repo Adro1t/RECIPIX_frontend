@@ -1,56 +1,53 @@
 import { Link } from "react-router-dom";
-import like from "../images/like.png";
 import React, { useEffect, useState } from "react";
-import { isAuthenticated } from "../pages/auth";
 import {
   deleteLikedRecipes,
-  getUserDetails,
   updateLikedRecipes,
+  updatePreferences,
 } from "./uiApi";
 
-const Like = ({ props }) => {
-  const { token, user } = isAuthenticated();
-  const [backgroundColor, setBackgroundColor] = useState("transparent");
-  const [userDetails, setUserDetails] = useState([]);
-  const [likedRecipes, setLikedRecipes] = useState("");
+const Like = ({ props, userDetails }) => {
+  const [backgroundColor, setBackgroundColor] = useState("black");
 
   function handleLikeChange() {
-    backgroundColor === "transparent"
-      ? setBackgroundColor("red")
-      : setBackgroundColor("transparent");
-    backgroundColor === "transparent" &&
-      updateLikedRecipes(userDetails.email, props._id);
+    if (backgroundColor === "black") {
+      updateLikedRecipes(userDetails.email, props._id).then(() => {
+        updatePreferences(userDetails.email, props.ingredientArray);
+      });
+      console.log(userDetails.preferences);
+      setBackgroundColor("red");
+    }
 
-    backgroundColor === "red" && deleteLikedRecipes(user.email, props._id);
+    if (backgroundColor === "red") {
+      deleteLikedRecipes(userDetails.email, props._id);
+      setBackgroundColor("black");
+    }
   }
 
-  const init = async () => {
-    try {
-      const userResponse = await getUserDetails(token, user._id);
-      setUserDetails(userResponse);
-      setLikedRecipes(userResponse.likedRecipes);
-    } catch (err) {
-      console.log(err);
-    }
-  };
   useEffect(() => {
-    init();
+    const likedRecipesId = userDetails.likedRecipes.map((recipe) => recipe._id);
+    likedRecipesId.includes(props._id)
+      ? setBackgroundColor("red")
+      : setBackgroundColor("black");
   }, []);
 
   return (
     <>
-      <Link to="#">
+      <Link>
         <div className="card-icon">
-          <button
-            className="border-0"
-            style={{ background: backgroundColor }}
-            onClick={handleLikeChange}
-          >
-            <img src={like} alt="" />
+          <button className="border-0" onClick={handleLikeChange}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill={backgroundColor}
+              className="bi bi-heart-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+              />
+            </svg>
           </button>
-          {/* <button>
-                      <img src={comment} alt="" />
-                    </button> */}
         </div>
       </Link>
     </>

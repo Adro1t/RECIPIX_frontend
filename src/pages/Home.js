@@ -51,9 +51,7 @@ const Home = () => {
           </div>
         </>
       )}
-      <center>
-        <button className="btn m-5 load-btn">Load More</button>
-      </center>
+
       <Footer />
     </>
   );

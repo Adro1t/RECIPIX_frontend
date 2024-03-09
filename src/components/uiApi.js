@@ -145,7 +145,7 @@ export const deleteLikedRecipes = async (email, recipe) => {
       },
       body: JSON.stringify({
         email: email,
-        likedRecipes: [recipe],
+        deleteRecipe: recipe,
       }),
     });
 

@@ -1,20 +1,39 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import { recipeDetails, relatedList } from "../components/uiApi";
+import {
+  getUserDetails,
+  recipeDetails,
+  relatedList,
+} from "../components/uiApi";
 import { API } from "../config";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 import "./RecipeDetails.css";
+import { isAuthenticated } from "./auth";
+import Like from "../components/Like";
 
-const RecipeDetails = (props) => {
+const RecipeDetails = () => {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState({});
   const [category, setCategory] = useState("");
   const [owner, setOwner] = useState("");
   const [relatedRecipes, setRelatedRecipes] = useState([]);
   const [error, setError] = useState(false);
-  const [instructions, setInstructions] = useState([]);
+
+  const [userDetails, setUserDetails] = useState();
+  const { token, user } = isAuthenticated();
+
+  const init = async () => {
+    try {
+      const data = await getUserDetails(token, user._id);
+      setUserDetails(data);
+      // console.log(data);
+      // console.log(userDetails);
+    } catch (err) {
+      console.error("Error fetching user details:", err);
+    }
+  };
 
   const loadSingleRecipe = (recipeId) => {
     recipeDetails(recipeId).then((data) => {
@@ -62,12 +81,19 @@ const RecipeDetails = (props) => {
   }
 
   useEffect(() => {
+    init();
     loadSingleRecipe(recipeId);
+    console.log(userDetails);
+    console.log(recipeId);
   }, [recipeId]);
   return (
     <>
       <Nav />
-      <h2 className="details-title">{recipe.recipe_name}</h2>
+      <h2 className="details-title">
+        {recipe.recipe_name}
+
+        <Like props={recipe} userDetails={userDetails} />
+      </h2>
       <div className="Details-container">
         <div className="row">
           <div className="col-8 details-info">
@@ -109,7 +135,6 @@ const RecipeDetails = (props) => {
           </div>
         </div>
       </div>
-
       {relatedRecipes.length > 0 && (
         <div>
           <h1 className="youmaylike">YOU MAY ALSO LIKE</h1>
@@ -120,7 +145,6 @@ const RecipeDetails = (props) => {
           </div>
         </div>
       )}
-
       <Footer />
     </>
   );

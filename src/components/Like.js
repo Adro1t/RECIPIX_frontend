@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import {
   deleteLikedRecipes,
@@ -8,6 +8,9 @@ import {
 
 const Like = ({ props, userDetails }) => {
   const [backgroundColor, setBackgroundColor] = useState("black");
+  const likedRecipesId = userDetails
+    ? userDetails.likedRecipes.map((recipe) => recipe._id)
+    : "";
 
   function handleLikeChange() {
     if (backgroundColor === "black") {
@@ -25,15 +28,17 @@ const Like = ({ props, userDetails }) => {
   }
 
   useEffect(() => {
-    const likedRecipesId = userDetails.likedRecipes.map((recipe) => recipe._id);
+    // console.log(likedRecipesId);
     likedRecipesId.includes(props._id)
       ? setBackgroundColor("red")
       : setBackgroundColor("black");
-  }, []);
+    // console.log(props);
+    // console.log(userDetails);
+  }, [userDetails]);
 
   return (
     <>
-      <Link>
+      <Link to={userDetails ? `` : `/login`}>
         <div className="card-icon">
           <button className="border-0" onClick={handleLikeChange}>
             <svg

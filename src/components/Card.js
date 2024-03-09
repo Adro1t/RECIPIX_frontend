@@ -29,7 +29,7 @@ const Card = ({ props }) => {
     init();
   }, []);
 
-  if (!props || !userDetails) return null; // Early return if data is missing
+  // if (!props || !userDetails) return null; // Early return if data is missing
 
   return (
     <>
@@ -54,7 +54,9 @@ const Card = ({ props }) => {
               </div>
               <div className="time">
                 <h3 className="total-time">{props.total_time} min</h3>
+                {/* {userDetails && ( */}
                 <Like props={props} userDetails={userDetails} />
+                {/* )} */}
               </div>
             </div>
           </div>

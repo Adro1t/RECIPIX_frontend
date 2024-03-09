@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { API } from "../config";
+import Edit from "./Edit";
 import "./OwnerRecipe.css";
+import Trash from "./Trash";
 
 const OwnerRecipe = ({ props }) => (
   <Link to={`/recipedetail/${props._id}`}>
@@ -18,8 +20,8 @@ const OwnerRecipe = ({ props }) => (
         <div className="d-flex justify-content-between">
           <h2 className="OwnerRecipe-heading">{props.recipe_name}</h2>
           <div className="update">
-            <button><i class="bi bi-pencil-square border-none" id="edit"></i></button>
-            <button><i class="bi bi-trash" id="delete"></i></button>
+            <Edit/>
+            <Trash/>
           </div>
         </div> 
           <br />

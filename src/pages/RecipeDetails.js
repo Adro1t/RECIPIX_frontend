@@ -76,24 +76,22 @@ const RecipeDetails = (props) => {
               <p className="details-category">{category}</p>
               <br />
               <div className="d-flex gap-4 ">
-              <p>PrepTime :  {recipe.prep_time} min</p>
-              <p>|</p>
-              <p>Cooktime :  {recipe.cook_time} min</p>
-              <p>|</p>
-              <p>Total time : {recipe.total_time} min</p>
+                <p>PrepTime : {recipe.prep_time} min</p>
+                <p>|</p>
+                <p>Cooktime : {recipe.cook_time} min</p>
+                <p>|</p>
+                <p>Total time : {recipe.total_time} min</p>
               </div>
               <br />
               <h3>Description</h3>
               <p>{recipe.description}</p>
               <h3>Ingredients</h3>
-              <p>
-                {recipe.ingredients &&
-                  recipe.ingredients
-                    .split(",")
-                    .map((ingredient) => (
-                      <p>{ingredient !== "" ? `${ingredient},` : ""}</p>
-                    ))}
-              </p>
+              {recipe.ingredients &&
+                recipe.ingredients
+                  .split(",")
+                  .map((ingredient, i) => (
+                    <p key={i}>{ingredient !== "" ? `${ingredient},` : ""}</p>
+                  ))}
               <h3>Instruction</h3>
               {recipe.instructions &&
                 splitInstructions(recipe.instructions).map((item, i) => (
@@ -103,7 +101,7 @@ const RecipeDetails = (props) => {
           </div>
           <div className="col-4">
             <img
-            className="rounded"
+              className="rounded"
               src={`${API}/${recipe.image}`}
               alt={"..." + recipe.recipe_name + "..."}
               style={{ width: "20vw", height: "20vw", objectFit: "cover" }}

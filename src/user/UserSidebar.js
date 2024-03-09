@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, signout } from "../pages/auth";
-import "./user.css"
+import "./user.css";
 import home from "../images/house-solid.svg";
 import like from "../images/heart-solid.svg";
 import user from "../images/user-solid.svg";
@@ -26,7 +26,7 @@ const UserSidebar = () => {
         </Link> */}
         <ul className="nav nav-link flex-column dashboard">
           <li className="nav-item d-flex align-item-center justify-content-start gap-2">
-            <img src={home} alt="" className="icon"/>
+            <img src={home} alt="" className="icon" />
             <Link
               to="/user/dashboard"
               className="nav-link active text-dark"
@@ -37,20 +37,20 @@ const UserSidebar = () => {
           </li>
 
           <li className="d-flex align-item-center justify-content-start gap-2">
-            <img src={add} alt="" className="icon"/>
+            <img src={add} alt="" className="icon" />
             <Link to="/user/addrecipe" className="nav-link text-white">
-                Add Recipe
+              Add Recipe
             </Link>
           </li>
           <li className="d-flex align-item-center justify-content-start gap-2">
-            <img src={user} alt="" className="icon"/>
+            <img src={user} alt="" className="icon" />
             <Link to="/user/myrecipes" className="nav-link text-white">
               My Recipes
             </Link>
           </li>
           <li className="d-flex align-item-center justify-content-start gap-2">
-            <img src={like} alt="" className="icon"/>
-            <Link to="/Liked Recipes" className="nav-link text-white">
+            <img src={like} alt="" className="icon" />
+            <Link to="/user/likedrecipes" className="nav-link text-white">
               Liked Recipes
             </Link>
           </li>

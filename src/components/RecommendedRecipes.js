@@ -9,6 +9,7 @@ const RecommendedRecipes = () => {
   const [recommendations, setRecommendations] = useState([]);
   const { token, user } = isAuthenticated();
   const [preferences, setPreferences] = useState([]);
+  const [fetchingData, setFetchingData] = useState(true);
 
   const init = async () => {
     try {
@@ -81,6 +82,9 @@ const RecommendedRecipes = () => {
       const recipeVector = recipeTFIDFVectors[i];
       const similarity = cosineSimilarity(userVector, recipeVector);
       if (similarity > 0.2) {
+        if (recommendations.length === 10) {
+          break; // Stop iterating once 10 recommendations are found
+        }
         // Adjust threshold as needed
         recommendations.push(recipes[i]);
         console.log(similarity,recipes[i]);
@@ -91,6 +95,8 @@ const RecommendedRecipes = () => {
     }
     console.log("recommended recipe")
     console.log(recommendations);
+
+    setFetchingData(false);
     return recommendations;
   }
 
@@ -111,12 +117,12 @@ const RecommendedRecipes = () => {
 
   useEffect(() => {
     init();
-  }, [recommendations]);
+  }, [fetchingData]);
 
   return (
     <>
       {recommendations.map((recipe, i) => (
-        <Card key={i} props={recipe} />
+        <Card key={recipe._id} props={recipe} />
       ))}
     </>
   );

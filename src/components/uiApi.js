@@ -108,6 +108,60 @@ export const updatePreferences = async (email, preferences) => {
   }
 };
 
+export const updateLikedRecipes = async (email, recipe) => {
+  try {
+    const response = await fetch(`${API}/user/update/likedrecipes`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        likedRecipes: [recipe],
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error saving likedRecipe: ${response.statusText}`);
+    }
+
+    await response.json();
+    console.log("likedRecipes updated successfully:"); // Log the response for debugging
+    // Handle successful response (e.g., display a success message)
+  } catch (err) {
+    console.error("Error saving recipes:", err); // Log the error for debugging
+    // Handle error (e.g., display an error message)
+  }
+};
+
+export const deleteLikedRecipes = async (email, recipe) => {
+  try {
+    const response = await fetch(`${API}/user/delete/likedrecipes`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        deleteRecipe: recipe,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error deleting likedRecipe: ${response.statusText}`);
+    }
+
+    await response.json();
+    console.log("likedRecipes updated successfully:"); // Log the response for debugging
+    // Handle successful response (e.g., display a success message)
+  } catch (err) {
+    console.error("Error saving recipes:", err); // Log the error for debugging
+    // Handle error (e.g., display an error message)
+  }
+};
+
 export const getUserDetails = async (token, id) => {
   try {
     const res = await fetch(`${API}/user/detail/${id}`, {

@@ -19,6 +19,7 @@ import AllUsers from "./admin/AllUsers";
 import GlassForPreference from "./components/GlassForPreference";
 import OwnerRecipe from "./components/OwnerRecipe";
 import MyRecipes from "./user/MyRecipes";
+import LikedRecipes from "./user/LikedRecipes";
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="dashboard" element={<UserDashboard />} />
             <Route path="addrecipe" element={<AddRecipe />} />
             <Route path="myrecipes" element={<MyRecipes />} />
+            <Route path="likedrecipes" element={<LikedRecipes />} />
           </Route>
         </Routes>
       </Router>

@@ -69,15 +69,16 @@ function GlassForPreference({ props }) {
 
   return (
     <div className="cont">
+      <h2>Please select any 5 of your preferred ingredients</h2>
       <button
-        className=""
-        style={{ position: "fixed", bottom: "0", right: "0" }}
+        className="btn color"
+        style={{ position: "fixed", bottom: "-12px", right: "-55px" }}
         onClick={() => handleSave("next")}
       >
         NEXT
       </button>
       <button
-        className=""
+        className="btn color"
         style={{ position: "fixed", bottom: "0", left: "0" }}
         onClick={() => handleSave("skip")}
       >

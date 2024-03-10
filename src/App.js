@@ -32,6 +32,7 @@ const App = () => {
           <Route path="/explore" element={<Explore />} />
           <Route path="/login" element={<Login />} />
           <Route path="/OwnerRecipe" element={<OwnerRecipe />} />
+          <Route path="/glass" element={<GlassForPreference />} />
 
           <Route path="/forgetpassword" element={<ForgetPassword />} />
           <Route path="/reset/password/:token" element={<ResetPassword />} />

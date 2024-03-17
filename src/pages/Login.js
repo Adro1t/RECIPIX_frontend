@@ -49,12 +49,7 @@ const Login = () => {
         <div className="row">
           <div className="col-md-4 p-5 logins">
             <Link to="/" className="d-flex justify-content-center logo-box">
-              <img
-                src={logo}
-                alt="logo"
-                className="logo1"
-                width={"100px"}
-              />
+              <img src={logo} alt="logo" className="logo1" width={"100px"} />
               <span className="title form-text">RecipiX</span>
             </Link>
             <p className=" text-center form-text">CREATE ACCOUNT</p>

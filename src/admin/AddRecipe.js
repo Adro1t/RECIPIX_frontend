@@ -206,7 +206,7 @@ const AddRecipe = () => {
                   onChange={handleChange("category")}
                   value={category}
                 >
-                  <option value="">Choose a category...</option>
+                  <option value="">Choose a Cuisine...</option>
                   {categories &&
                     categories.map((c, i) => (
                       <option key={i} value={c._id}>

@@ -177,3 +177,14 @@ export const getUserDetails = async (token, id) => {
     console.log(err);
   }
 };
+
+export const deleteRecipe = async (recipeId) => {
+  try {
+    const res = await fetch(`${API}/recipe/delete/${recipeId}`, {
+      method: "DELETE",
+    });
+    return await res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};

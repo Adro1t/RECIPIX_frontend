@@ -3,10 +3,18 @@ import UserSidebar from "./UserSidebar";
 import OwnerRecipe from "../components/OwnerRecipe";
 import { isAuthenticated } from "../pages/auth";
 import { getRecipe } from "../components/uiApi";
+import Dialog from "../components/Dialog";
 
 const MyRecipes = () => {
   const { user } = isAuthenticated();
   const [recipes, setRecipes] = useState([]);
+  const [showDialog, setShowDialog] = useState(false);
+  const [selectedRecipe, setSelectedRecipe] = useState({});
+
+  function handleDialog(recipe) {
+    setSelectedRecipe(recipe);
+    setShowDialog(!showDialog);
+  }
 
   const init = () => {
     getRecipe("createdAt", "asc")
@@ -25,20 +33,37 @@ const MyRecipes = () => {
       });
   };
 
-  useEffect(() => init(), []);
+  useEffect(() => init(), [showDialog]);
 
   return (
     <>
-      <div className="row">
+      <div className="row h-auto">
         <div className="col-md-3">
           <UserSidebar />
         </div>
         <div className="col-md-9 mt-4">
           <h1>My Recipes</h1>
           {recipes.map((recipe) => (
-            <OwnerRecipe props={recipe} />
+            <OwnerRecipe
+              props={recipe}
+              onShow={handleDialog}
+              key={recipe._id}
+            />
           ))}
         </div>
+        {showDialog && <Dialog props={selectedRecipe} onHide={handleDialog} />}
+        {showDialog && (
+          <div
+            className=""
+            style={{
+              position: "absolute",
+              top: "0",
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgb(0 0 0/.5)",
+            }}
+          ></div>
+        )}
       </div>
     </>
   );

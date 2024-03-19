@@ -7,7 +7,7 @@ import Trash from "./Trash";
 
 const OwnerRecipe = ({ props }) => (
   <Link to={`/recipedetail/${props._id}`}>
-    <div className="card-container">
+    <div className="mt-3">
       <div className="card-background gap-3">
         <div className="image">
           <img

@@ -34,7 +34,8 @@ const UserDashboard = () => {
             height: "100%",
             backgroundColor: "rgb(0 0 0/.5)",
           }}
-        ></div>
+        >
+        </div>
       )}
     </>
   );

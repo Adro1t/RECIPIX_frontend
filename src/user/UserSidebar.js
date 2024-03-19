@@ -15,7 +15,7 @@ const UserSidebar = () => {
   return (
     <div className="container-fluid">
       <div
-        className="d-flex flex-column flex-shrink-0 p-3 text-bg-light rounded-3"
+        className="d-flex flex-column flex-shrink-0 rounded-3"
         style={{ width: "280px" }}
       >
         {/* <Link

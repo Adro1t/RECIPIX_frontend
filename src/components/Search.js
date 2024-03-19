@@ -34,6 +34,7 @@ const Search = () => {
             matchCount++;
           }
         }
+        console.log(matchCount,recipe.recipe_name);
 
         if (matchCount >= queryLower.length*0.8) {
           filteredResults.push(recipe);

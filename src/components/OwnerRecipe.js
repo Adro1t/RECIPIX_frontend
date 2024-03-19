@@ -21,9 +21,9 @@ const OwnerRecipe = ({ props, onShow }) => (
           <h2 className="OwnerRecipe-heading">{props.recipe_name}</h2>
           <div className="update">
             <Edit/>
-            <button className="border-0" onClick={() => onShow(props)}>
+            <Link className="border-0" onClick={() => onShow(props)}>
                   <Trash />
-                </button>
+                </Link>
           </div>
         </div> 
           <br />

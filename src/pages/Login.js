@@ -77,7 +77,7 @@ const Login = () => {
               <Signup />
             </div>
           </div>
-          <div className="col-md-8 background_image">
+          <div className="col-md-12 background_image">
             <img src={khajaSet} alt="khaja" className="khajaset" />
             <img src={background} alt="..." className="khajabg" />
           </div>

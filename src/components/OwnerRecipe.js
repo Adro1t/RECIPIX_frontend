@@ -5,7 +5,7 @@ import Edit from "./Edit";
 import "./OwnerRecipe.css";
 import Trash from "./Trash";
 
-const OwnerRecipe = ({ props }) => (
+const OwnerRecipe = ({ props, onShow }) => (
   <Link to={`/recipedetail/${props._id}`}>
     <div className="mt-3">
       <div className="card-background gap-3">
@@ -21,7 +21,9 @@ const OwnerRecipe = ({ props }) => (
           <h2 className="OwnerRecipe-heading">{props.recipe_name}</h2>
           <div className="update">
             <Edit/>
-            <Trash/>
+            <button className="border-0" onClick={() => onShow(props)}>
+                  <Trash />
+                </button>
           </div>
         </div> 
           <br />

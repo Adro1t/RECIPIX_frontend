@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import khajaSet from "../images/Khajaset.png";
 import logo from "../images/Recipix.png";
-import background from "../images/background.png";
 import "./auth/Login.css";
 import Signin from "./auth/Signin";
 import Signup from "./auth/Signup";
@@ -45,9 +44,9 @@ const Login = () => {
 
   return (
     <>
-      <div className="container-fluid bg_image">
-        <div className="row">
-          <div className="col-md-4 p-5 logins">
+      <div className="container-xl bg_image m-auto ">
+        <div className="row d-flex align-item-center ">
+          <div className="col-md-5 p-5 logins ">
             <Link to="/" className="d-flex justify-content-center logo-box">
               <img src={logo} alt="logo" className="logo1" width={"100px"} />
               <span className="title form-text">RecipiX</span>
@@ -77,9 +76,8 @@ const Login = () => {
               <Signup />
             </div>
           </div>
-          <div className="col-md-8 background_image">
-            <img src={khajaSet} alt="khaja" className="khajaset" />
-            <img src={background} alt="..." className="khajabg" />
+          <div className="col-md-7 m-auto khaja ">
+            <img src={khajaSet} alt="khaja" className="khajabg" />
           </div>
         </div>
       </div>

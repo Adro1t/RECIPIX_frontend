@@ -102,37 +102,20 @@
   cursor: pointer;
   display: block;
   margin: auto;
-  background: linear-gradient(to right, #fcb036, #fcb036);
+  background: orange;
   border: 0;
   outline: none;
   border-radius: 20px;
   color: white;
 }
 
-.khajaset {
-  position: absolute;
-  /* height: 350px;
-  width: 350px;
-  display: block;
-  top: 100px;
-  right: 350px; */
-  width: 335px;
-  height: 339px;
-  top: 125px;
-  left: 562px;
-  z-index: -1;
+.input-btn:hover{
+  background-color: rgb(255, 208, 0);
 }
 
 .khajabg {
-  position: absolute;
-  /* display: block;
-  width: 50%;
-  height: 100%; */
-  width: 619px;
-  height: 667px;
-  top: 3px;
-  left: 419px;
-  z-index: -2;
+  width: 50vw;
+  z-index: -1;
 }
 
 .form-div {
@@ -192,15 +175,12 @@
     caret-color: #fcb036;
   }
 
-  .khajaset {
-    display: none;
-  }
-
   .khajabg {
     display: none;
   }
 }
-@media (width>432px) and (width<769px) {
+
+@media (max-width: 768px) {
   .form-text {
     font-family: "Poppins", sans-serif;
     font-weight: bolder;
@@ -222,12 +202,7 @@
     box-shadow: 0 0 2px 4px #ff61241f;
     caret-color: #fcb036;
   }
-
-  .khajaset {
-    display: none;
-  }
-
-  .khajabg {
+  .khaja{
     display: none;
   }
 }

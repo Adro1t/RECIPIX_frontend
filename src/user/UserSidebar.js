@@ -63,13 +63,13 @@ const UserSidebar = () => {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <img
+            {/* <img
               src="https://github.com/mdo.png"
               alt=""
               width="32"
               height="32"
               className="rounded-circle me-2"
-            />
+            /> */}
             <strong className="text-dark">{name}</strong>
           </Link>
           <ul className="dropdown-menu dropdown-menu-dark text-small shadow text-dark">

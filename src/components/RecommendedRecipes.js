@@ -63,18 +63,18 @@ const RecommendedRecipes = () => {
     );
     
     console.log("New start");
-    console.log(" User Preference: ");
-    console.log(userPreferences);
-    console.log("recipeTFIDFVectors");
-    console.log(recipeTFIDFVectors);
+    // console.log(" User Preference: ");
+    // console.log(userPreferences);
+    // console.log("recipeTFIDFVectors");
+    // console.log(recipeTFIDFVectors);
     // Convert user preferences to TF-IDF vector
     const userVector = ingredientsToTFIDFVector(
       userPreferences,
       allIngredientNames
     );
     
-    console.log("User Vector");
-    console.log(userVector);
+    // console.log("User Vector");
+    // console.log(userVector);
 
     const recommendations = [];
     console.log("similarity between user preference and recipes")
@@ -86,11 +86,12 @@ const RecommendedRecipes = () => {
           break; // Stop iterating once 10 recommendations are found
         }
         // Adjust threshold as needed
+        // console.log(similarity,recipes[i].recipe_name);
         recommendations.push(recipes[i]);
-        console.log(similarity,recipes[i]);
+        // console.log(similarity,recipes[i]);
       }
       // to display all recipe similarity in console
-      // console.log(similarity,recipes[i]);
+      console.log(similarity,recipes[i].recipe_name);
       
     }
     console.log("recommended recipe")

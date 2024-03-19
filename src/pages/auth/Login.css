@@ -206,3 +206,27 @@
     display: none;
   }
 }
+@media (width>1439px) and (width<2560px) {
+  .form-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+  }
+  .khajaset {
+    position: absolute;
+    width: 335px;
+    height: 339px;
+    top: 125px;
+    left: 742px;
+    z-index: -1;
+  }
+  
+  .khajabg {
+    position: absolute;
+    width: 619px;
+    height: 667px;
+    top: 3px;
+    left: 600px;
+    z-index: -2;
+  }
+
+}

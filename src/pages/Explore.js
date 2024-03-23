@@ -91,7 +91,7 @@ const Explore = () => {
       size >= 0 &&
       size >= limit && (
         <center>
-          <button className="input-btn btn btn-warning m-5" onClick={loadMore}>
+          <button className="input-btn btn m-5" onClick={loadMore}>
             Load More
           </button>
         </center>
@@ -102,7 +102,7 @@ const Explore = () => {
   return (
     <>
       <Nav />
-      <div className="container-fluid mt-5">
+      <div className="container-fluid mt-5 px-3">
         <div className="row main-explore">
           <div className="col col-md-2 filter glass">
             <h1 className="sidebar-text">Cuisine</h1>

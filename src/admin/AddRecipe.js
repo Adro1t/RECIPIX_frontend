@@ -148,6 +148,7 @@ const AddRecipe = () => {
                   type="file"
                   className="form-control"
                   id="image"
+                  accept="image/*"
                   onChange={handleChange("image")}
                 />
               </div>

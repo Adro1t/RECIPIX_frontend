@@ -17,15 +17,15 @@ const OwnerRecipe = ({ props, onShow }) => (
           />
         </div>
         <div className="Details-container">
-        <div className="d-flex justify-content-between">
-          <h2 className="OwnerRecipe-heading">{props.recipe_name}</h2>
-          <div className="update">
-            <Edit/>
-            <button className="border-0" onClick={() => onShow(props)}>
-                  <Trash />
-                </button>
+          <div className="d-flex justify-content-between">
+            <h2 className="OwnerRecipe-heading">{props.recipe_name}</h2>
+            <div className="update">
+              <Edit />
+              <Link className="border-0" onClick={() => onShow(props)}>
+                <Trash />
+              </Link>
+            </div>
           </div>
-        </div> 
           <br />
           <h6 className="description">Description</h6>
           <p className="details">{props.description}</p>

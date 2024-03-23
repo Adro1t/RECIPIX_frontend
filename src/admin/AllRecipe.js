@@ -45,7 +45,10 @@ const AllRecipe = () => {
           <div className="col-md-9 ms-5 mt-5 table-responsive">
             <h2 className="text-center">There are {recipes.length} Recipes</h2>
             <hr />
-            <table className="table table-bordered w-100" style={{ tableLayout: "fixed" }}>
+            <table
+              className="table table-bordered w-100"
+              style={{ tableLayout: "fixed" }}
+            >
               <thead>
                 <tr>
                   <th>Recipe Name</th>
@@ -71,11 +74,15 @@ const AllRecipe = () => {
                     <td>{item.instructions}</td>
                     <td>{item.category.category_Name}</td>
                     <td>
-{item.owner.name}
+                      {item.owner.name}
                       {/* {users.find((user) => user._id === item.owner)?.name} */}
                     </td>
                     <td>
-                      <img src={`${API}/${item.image}`} alt={item.recipe_name} className="img-fluid" />
+                      <img
+                        src={`${API}/${item.image}`}
+                        alt={item.recipe_name}
+                        className="img-fluid"
+                      />
                     </td>
                     <td>
                       <Link to="#" className="btn btn-danger">

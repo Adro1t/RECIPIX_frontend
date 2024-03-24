@@ -39,13 +39,13 @@ const Like = ({ props, userDetails }) => {
   return (
     <>
       <Link to={userDetails ? `` : `/login`}>
-        <div className="card-icon">
+        <div className="">
           <button className="border-0" onClick={handleLikeChange}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill={backgroundColor}
               className="bi bi-heart-fill"
-              viewBox="0 0 16 16"
+              width="24px" height="24px" viewBox="0 0 16 16"
             >
               <path
                 fillRule="evenodd"

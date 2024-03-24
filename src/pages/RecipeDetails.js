@@ -90,18 +90,16 @@ const RecipeDetails = () => {
     <>
       <Nav />
       <div className="Details-container container-fluid">
-        <h2 className="details-title">
+        <h2 className="details-title d-flex align-item-center gap-4">
           {recipe.recipe_name}
-
           <Like props={recipe} userDetails={userDetails} />
-          {/* make it pretty */}
-          <ShareRecipe />
         </h2>
         <div className="row">
           <div className="col-8 details-info">
             <div>
               <p className="text-decoration-underline pb-1">by {owner}</p>
               <p className="details-category">{category}</p>
+          <ShareRecipe />
               <br />
               <div className="d-flex gap-4 ">
                 <p>PrepTime : {recipe.prep_time} min</p>

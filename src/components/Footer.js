@@ -34,17 +34,17 @@ const Footer = () => (
               </Link>
             </li>
             <li>
-              <Link className="footer-links" to="/explore">
+              <Link className="footer-links" to="/">
                 Help
               </Link>
             </li>
             <li>
-              <Link className="footer-links" to="/explore">
+              <Link className="footer-links" to="/">
                 Team
               </Link>
             </li>
             <li>
-              <Link className="footer-links" to="/explore">
+              <Link className="footer-links" to="/about">
                 About us
               </Link>
             </li>
@@ -64,12 +64,12 @@ const Footer = () => (
               </Link>
             </li>
             <li>
-              <Link className="footer-links" to="/explore">
+              <Link className="footer-links" to="/">
                 Insight
               </Link>
             </li>
             <li>
-              <Link className="footer-links" to="/explore">
+              <Link className="footer-links" to="/">
                 Use Cases
               </Link>
             </li>

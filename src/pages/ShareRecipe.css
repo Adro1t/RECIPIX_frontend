@@ -1,0 +1,6 @@
+.share{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+    flex-wrap: wrap;
+}

@@ -11,27 +11,30 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from "react-share";
+import "./ShareRecipe.css";
 
 const ShareRecipe = () => {
   const shareUrl = window.location.href;
   return (
     <>
-      <FacebookShareButton url={shareUrl}>
-        <FacebookIcon />
+    <div className="d-flex gap-3">
+      <FacebookShareButton  url={shareUrl}>
+        <FacebookIcon className="share shadow" />
       </FacebookShareButton>
       <FacebookMessengerShareButton url={shareUrl}>
-        <FacebookMessengerIcon />
+        <FacebookMessengerIcon className="share shadow" />
       </FacebookMessengerShareButton>
       <EmailShareButton url={shareUrl}>
-        <EmailIcon />
+        <EmailIcon className="share shadow" />
       </EmailShareButton>
 
       <WhatsappShareButton url={shareUrl}>
-        <WhatsappIcon />
+        <WhatsappIcon className="share shadow" />
       </WhatsappShareButton>
-      <TwitterShareButton url={shareUrl}>
-        <TwitterIcon />
+      <TwitterShareButton  url={shareUrl}>
+        <TwitterIcon className="share shadow"/>
       </TwitterShareButton>
+    </div>
     </>
   );
 };

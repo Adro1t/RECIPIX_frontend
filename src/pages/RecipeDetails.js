@@ -12,6 +12,7 @@ import Card from "../components/Card";
 import "./RecipeDetails.css";
 import { isAuthenticated } from "./auth";
 import Like from "../components/Like";
+import ShareRecipe from "./ShareRecipe";
 
 const RecipeDetails = () => {
   const { recipeId } = useParams();
@@ -83,18 +84,19 @@ const RecipeDetails = () => {
   useEffect(() => {
     init();
     loadSingleRecipe(recipeId);
-    console.log(userDetails);
-    console.log(recipeId);
   }, [recipeId]);
+
   return (
     <>
       <Nav />
       <div className="Details-container container-fluid">
-      <h2 className="details-title">
-        {recipe.recipe_name}
+        <h2 className="details-title">
+          {recipe.recipe_name}
 
-        <Like props={recipe} userDetails={userDetails} />
-      </h2>
+          <Like props={recipe} userDetails={userDetails} />
+          {/* make it pretty */}
+          <ShareRecipe />
+        </h2>
         <div className="row">
           <div className="col-8 details-info">
             <div>
@@ -108,7 +110,7 @@ const RecipeDetails = () => {
                 <p>|</p>
                 <p>Total time : {recipe.total_time} min</p>
               </div>
-              
+
               <h3>Description</h3>
               <p className="">{recipe.description}</p>
             </div>
@@ -122,23 +124,20 @@ const RecipeDetails = () => {
             />
           </div>
           <div>
-          <h3>Ingredients</h3>
-              <ul className="list-group gap-2 ingredients-list">
+            <h3>Ingredients</h3>
+            <ul className="list-group gap-2 ingredients-list">
               {recipe.ingredients &&
-                recipe.ingredients
-                  .split(",")
-                  .map((ingredient, i) => (
-                    
-                      <li className="list-group-item rounded-5"
-                        key={i}>{ingredient !== "" ? `${ingredient},` : ""}
-                        </li>   
-                  ))}
-                  </ul>
-              <h3>Instruction</h3>
-              {recipe.instructions &&
-                splitInstructions(recipe.instructions).map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}{" "}
+                recipe.ingredients.split(",").map((ingredient, i) => (
+                  <li className="list-group-item rounded-5" key={i}>
+                    {ingredient !== "" ? `${ingredient},` : ""}
+                  </li>
+                ))}
+            </ul>
+            <h3>Instruction</h3>
+            {recipe.instructions &&
+              splitInstructions(recipe.instructions).map((item, i) => (
+                <p key={i}>{item}</p>
+              ))}{" "}
           </div>
         </div>
       </div>

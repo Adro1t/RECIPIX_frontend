@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import khajaSet from "../images/Khajaset.png";
 import logo from "../images/Recipix.png";
@@ -8,11 +8,13 @@ import Signup from "./auth/Signup";
 import { isAuthenticated } from "./auth";
 
 const Login = () => {
+  const [text, setText] = useState("WELCOME");
   const toggleSignIN = () => {
     document.getElementById("signin").classList.remove("d-none");
     document.getElementById("signup").classList.add("d-none");
     document.querySelector(".toggler").classList.add("underline");
     document.querySelector(".toggler2").classList.remove("underline");
+    setText("WELCOME");
   };
 
   const toggleSignUP = () => {
@@ -20,6 +22,7 @@ const Login = () => {
     document.querySelector(".toggler2").classList.add("underline");
     document.querySelector(".toggler").classList.remove("underline");
     document.getElementById("signup").classList.remove("d-none");
+    setText("CREATE ACCOUNT");
   };
 
   const navigate = useNavigate();
@@ -51,7 +54,7 @@ const Login = () => {
               <img src={logo} alt="logo" className="logo1" width={"100px"} />
               <span className="title form-text">RecipiX</span>
             </Link>
-            <p className=" text-center form-text">CREATE ACCOUNT</p>
+            <p className=" text-center form-text">{text}</p>
             <div className="options-box">
               <div id="toggle-box"></div>
               <Link

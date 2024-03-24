@@ -85,7 +85,7 @@
 
 .input-field:hover {
   width: 100%;
-  padding: 7px 0;
+  /* padding: 7px 0; */
   margin: 0px 0;
   outline: solid #fcb036;
   cursor: pointer;
@@ -116,6 +116,15 @@
 .khajabg {
   width: 50vw;
   z-index: -1;
+
+}
+
+.khaja{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+
 }
 
 .form-div {
@@ -210,14 +219,6 @@
   .form-text {
     font-family: "Poppins", sans-serif;
     font-weight: bolder;
-  }
-  .khajaset {
-    position: absolute;
-    width: 335px;
-    height: 339px;
-    top: 125px;
-    left: 742px;
-    z-index: -1;
   }
   
   .khajabg {

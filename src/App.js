@@ -20,6 +20,7 @@ import GlassForPreference from "./components/GlassForPreference";
 import OwnerRecipe from "./components/OwnerRecipe";
 import MyRecipes from "./user/MyRecipes";
 import LikedRecipes from "./user/LikedRecipes";
+import About from "./pages/About";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/OwnerRecipe" element={<OwnerRecipe />} />
           <Route path="/glass" element={<GlassForPreference />} />
+          <Route path="/about" element={<About/>}/>
 
           <Route path="/forgetpassword" element={<ForgetPassword />} />
           <Route path="/reset/password/:token" element={<ResetPassword />} />

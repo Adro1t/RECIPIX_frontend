@@ -31,7 +31,7 @@ const Checkbox = ({ categories, handleFilters }) => {
             onChange={handleToggle(c._id)}
           />
           <label
-            className="label-text form-check-label"
+            className="label-text form-check-label fs-6"
             htmlFor="flexCheckDefault"
           >
             {capitalize(c.category_Name)}

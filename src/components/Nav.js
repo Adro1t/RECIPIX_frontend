@@ -51,8 +51,8 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="links nav-item">
-                <Link className="" aria-disabled="true">
-                  Help
+                <Link className="" to="/about">
+                  About Us
                 </Link>
               </li>
             </ul>

@@ -59,7 +59,7 @@ const UserSidebar = () => {
         <div className="dropdown text-dark">
           <Link
             to="#"
-            className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            className="d-flex align-items-center text-white text-decoration-none"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
@@ -70,9 +70,9 @@ const UserSidebar = () => {
               height="32"
               className="rounded-circle me-2"
             /> */}
-            <strong className="text-dark">{name}</strong>
+            <strong className="text-dark ps-3">{name}</strong>
           </Link>
-          <ul className="dropdown-menu dropdown-menu-dark text-small shadow text-dark">
+          <ul className="dropdown-menu dropdown-menu-light text-small shadow text-dark">
             <li>
               <Link className="dropdown-item" to="#">
                 {email}

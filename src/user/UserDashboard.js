@@ -22,7 +22,12 @@ const UserDashboard = () => {
 
   return (
     <>
+    <div style={{
+      paddingTop: '8px',
+      paddingLeft: '108px'
+    }}>
       <UserSidebar />
+    </div>
       {preferences.length === 0 && <GlassForPreference props={userDetails} />}
       {preferences.length === 0 && (
         <div

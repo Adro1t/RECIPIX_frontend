@@ -24,7 +24,7 @@ const Footer = () => (
           <h3 className="md-4">Company</h3>
           <ul>
             <li>
-              <Link className="footer-links" to="/home">
+              <Link className="footer-links" to="/">
                 Home
               </Link>
             </li>

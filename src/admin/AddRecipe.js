@@ -120,8 +120,8 @@ const AddRecipe = () => {
 
   return (
     <>
-      <div className="container-fluid">
-        <div className="row">
+      <div className="container">
+        <div className="row m-auto">
           <div className="col-md-3">
             {user.role === 1 ? <AdminSidebar /> : <UserSidebar />}
           </div>

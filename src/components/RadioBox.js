@@ -10,7 +10,7 @@ const RadioBox = ({ times, handleFilters }) => {
   return (
     <>
       {times.map((t, i) => (
-        <div className="form-check" key={i}>
+        <div className="form-check " key={i}>
           <input
             className=" checker2 form-check-input"
             type="radio"
@@ -20,7 +20,7 @@ const RadioBox = ({ times, handleFilters }) => {
             name={t}
           />
           <label
-            className=" label-text form-check-label"
+            className=" label-text form-check-label fs-6"
             htmlFor="exampleRadios1"
           >
             {t.name}
